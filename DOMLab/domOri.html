@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Practice</title>
+        <style>
+            h1.mut
+            {
+                color: rebeccapurple;
+            }
+        </style>
+        <script>
+            function run()
+            {
+                    const mainHeading = document.getElementById('main-heading');
+                    mainHeading.textContent = 'DOM has been changed!';
+                    <!-- mainHeading.style.color = "red"; -->
+                    mainHeading.style.border = "2px solid green"
+                    mainHeading.setAttribute('class','mut');
+
+                    document.getElementsByClassName('info')[0].style.color = "yellow";
+                    document.getElementsByClassName('info')[2].style.color = "yellow";
+                    document.getElementsByTagName('p')[4].style.color = "yellow";
+
+                    alert(document.getElementsByTagName('div')[1].childNodes.length)
+                    document.getElementsByTagName('div')[1].lastChild.style.color = "blue";
+            }
+        </script>
+        </head>
+    <body>
+        <h1 id="main-heading">Hello, DOM!</h1>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <p class="info">This is a simple paragraph.<div>Hello</div></p>
+        <button id="change-text" onclick="run()">Change Text</button>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Practice</title>
+        <script>
+            var num = 0;
+            function run()
+            {
+                const show = document.getElementById('show');
+                //show.innerHTML = '<div style="color:red">hello</div>';
+                const div = document.createElement('div');
+                div.style.color='red';
+                let txt = document.getElementById('data').value;
+                const text = document.createTextNode('Hello' + (num++));
+                div.appendChild(text);
+                show.appendChild(div);
+            }
+            function del()
+            {
+                const show = document.getElementById('show');
+                if (show.childNodes.length > 0)
+                {
+                    const div = show.firstChild;
+                    show.removeChild(div);
+                }
+            }
+        </script>
+        <style>
+            .bgD
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.5);
+            }
+            .dialog
+            {
+                background-color: antiquewhite;
+                position: absolute;
+                top: 25%;
+                left: calc(50% - 150px);
+                width: 300px;
+                height: 200px;
+                border-radius: 10px;
+                animation-name: start;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+                opacity: 1;
+            }
+            .dialog-title
+            {
+                text-align: center;
+                margin: 5px;
+                color: rebeccapurple;
+            }
+            .dialog-body
+            {
+                padding: 5px;
+            }
+            @keyframes start
+            {
+                from {top: -300px}
+                tex {top: 25%;}
+            }
+        </style>
+        </head>
+    <body>
+        <h1 id="show">Hello, DOM!</h1>
+        <button id="change-text" onclick="run()">Change Text</button>
+        <button onclick="del()">Del</button>
+        <button onclick="document.getElementById('dialog').style.display='inline'">Deerlong</button>
+        <div class="bgD" id="dialog">
+            <div class="dialog">
+                <div class="dialog-title">Dialog</div>
+                <div class="dialog-body">
+                    Hello MUT<br>
+                    Hello MUT<br>
+                    Hello MUT<br>
+                    <div style="text-align: center;">
+                        <button onclick="document.getElementById('dialog').style.display='none'">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE hmtl>
+<html>
+
+    <head>
+        <title>javascript</title>
+        <script src="script.js"></script>
+        <script>
+            function Show()
+            {
+                alert('No! No');
+            }
+        </script>
+    </head>
+
+    <body onload="Show()">
+        <h1>External javascript Example</h1>
+        <script>
+            const color = ['red', 'green', 'blue', 'yellow'];
+            let row = prompt("Enter row");
+            let col = prompt("Enter col");
+            document.write('<table border="1">');
+            for (let i = 0;i < row;i++)
+            {
+                document.write('<tr>');
+                for (let j = 0;j < row;j++)
+                {
+                    document.write(`<td style="background-color:${color[(i + j) % color.length]}">Hello, Mut</td>`)
+                }
+                document.write('<tr>');
+            }
+            document.write('</table>')
+        </script>
+        <p>Click the button to display a message.</p>
+        <button onclick="displayMessage()">Click me!</button>    
+    </body>
+
+</html>
