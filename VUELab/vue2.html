@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MUT</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="student[0].name='Hello'">Click</button>
+            <div v-for="item in student" style="border: 1px solid red;"
+            :style="item.name=='Gay'?'border-color:green':'border-color:red'">
+                <span>
+                    Name:{{ item.name }} <br>
+                    Last Name:{{ item.lastname }} <br>
+                </span>
+            </div>
+        </div>
+        <script>
+            const { createApp, ref} = Vue
+            createApp({
+                setup() {
+                    const message = ref('Hello vue!')
+                    return {
+                        message
+                    }
+                },
+                data(){
+                    return {
+                        student:[
+                            {name:'Gay',lastname:'Ohm'},
+                            {name:'Penkuay',lastname:'rai'},
+                            {name:'GG',lastname:'EZ'},
+                            {name:'MEGA',lastname:'GNAR'},
+                            {name:'ELASTIN',lastname:'TAUNG'},
+                            {name:'SAMOONHAN',lastname:'HAN'},
+                        ]
+                    }
+                },
+                methods:{
+                    inc(){
+                        this.name++;
+                    }
+                }
+            }).mount('#app')
+        </script>
+    </body>
+</html>
